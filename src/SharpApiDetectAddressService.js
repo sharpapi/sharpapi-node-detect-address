@@ -5,6 +5,15 @@ const { SharpApiCoreService, SharpApiJobTypeEnum } = require('@sharpapi/sharpapi
  */
 class SharpApiDetectAddressService extends SharpApiCoreService {
   /**
+   * Creates a new SharpApiDetectAddressService instance
+   * @param {string} apiKey - Your SharpAPI API key
+   * @param {string} [apiBaseUrl='https://sharpapi.com/api/v1'] - API base URL
+   */
+  constructor(apiKey, apiBaseUrl = 'https://sharpapi.com/api/v1') {
+    super(apiKey, apiBaseUrl, '@sharpapi/sharpapi-node-detect-address/1.0.1');
+  }
+
+  /**
    * Parses the provided text for any possible addresses. Useful for processing
    * and validating chunks of data against physical addresses or detecting addresses
    * in places where they're not expected.
